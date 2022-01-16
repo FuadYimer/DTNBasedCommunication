@@ -5,5 +5,5 @@
 Clone the project repo using the command
 
 ```
-$ git clone https://github.com/FuadYimer/DTNBasedCommunicationUI.git
+$ git clone https://github.com/FuadYimer/DTNBasedCommunication.git
 ```
