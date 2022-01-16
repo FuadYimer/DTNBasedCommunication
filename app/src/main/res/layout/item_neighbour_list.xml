@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+~ Copyright (C) 2014 Lucien Loiseau
+~
+~ This file is part of Rumble.
+~
+~ Rumble is free software: you can redistribute it and/or modify
+~ it under the terms of the GNU General Public License as published by
+~ the Free Software Foundation, either version 3 of the License, or
+~ (at your option) any later version.
+~
+~ Rumble is distributed in the hope that it will be useful,
+~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+~ GNU General Public License for more details.
+~
+~ You should have received a copy of the GNU General Public License
+~ along with Rumble.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/neighbours_list_item"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingLeft="10dp"
+    android:paddingTop="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="5dp">
+
+    <ImageView android:id="@+id/neighbour_item_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="Neighbour Profile Picture"
+        android:gravity="left"
+        android:src="@drawable/ic_contact_picture" />
+
+
+    <LinearLayout
+        android:id="@+id/neighbours_item_wireless"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="12dip"
+        android:gravity="right"
+        android:minHeight="48dp">
+
+        <ImageView android:id="@+id/neighbour_item_bluetooth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Bluetooth Activated"
+            android:gravity="top"
+            android:visibility="invisible"
+            android:src="@drawable/ic_bluetooth_grey600_18dp" />
+
+        <ImageView android:id="@+id/neighbour_item_wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Wifi Activated"
+            android:gravity="bottom"
+            android:visibility="invisible"
+            android:src="@drawable/ic_signal_wifi_0_bar_grey600_18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/neighbours_item_info"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:minHeight="48dp">
+
+        <TextView android:id="@+id/neighbour_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="left"
+            style="@style/Drawer.Neighbour.Item"/>
+
+        <TextView android:id="@+id/neighbour_item_link_layer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="left"
+            style="@style/Drawer.Neighbour.Item"/>
+    </LinearLayout>
+
+</LinearLayout>

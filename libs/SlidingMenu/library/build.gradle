@@ -1,0 +1,47 @@
+buildscript {
+    repositories {
+        google()
+        maven {
+            url "https://maven.google.com"
+        }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.4'
+
+    }
+}
+//apply plugin: 'android-library'
+plugins {
+    id  'com.android.library'
+}
+
+
+dependencies {
+    //noinspection GradleCompatible
+    implementation 'com.android.support:support-v4:13.0.0'
+}
+
+android {
+    compileSdkVersion 31
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 31
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+
+            manifest.srcFile 'AndroidManifest.xml'
+        }
+    }
+
+}

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+~ Copyright (C) 2014 Lucien Loiseau
+~
+~ This file is part of Rumble.
+~
+~ Rumble is free software: you can redistribute it and/or modify
+~ it under the terms of the GNU General Public License as published by
+~ the Free Software Foundation, either version 3 of the License, or
+~ (at your option) any later version.
+~
+~ Rumble is distributed in the hope that it will be useful,
+~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+~ GNU General Public License for more details.
+~
+~ You should have received a copy of the GNU General Public License
+~ along with Rumble.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<resources>
+
+    <string name="app_name">Rumble</string>
+    <string name="bluetooth_state_on_openning">bluetooth_state_on_openning</string>
+    <string name="wifi_state_on_openning">wifi_state_on_openning</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+
+    <string name="tab_public">Public</string>
+    <string name="tab_group">Group</string>
+    <string name="tab_chat">Chat</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_title">Navigation</string>
+    <string name="navigation_drawer_group">Groups</string>
+    <string name="navigation_drawer_contacts">Contacts</string>
+    <string name="navigation_drawer_hashtag">Hashtags</string>
+    <string name="navigation_drawer_status_favorites">Favorites</string>
+    <string name="navigation_drawer_settings">Settings</string>
+    <string name="navigation_drawer_exit">Shutdown</string>
+
+    <string name="status_viewer">Status</string>
+    <string name="status_more_option_like">Like</string>
+    <string name="status_more_option_save">Save</string>
+    <string name="status_more_option_delete">Delete</string>
+
+    <string name="group_detail_tab_message">Messages</string>
+    <string name="group_detail_tab_members">Members</string>
+    <string name="contact_detail_tab_message">Messages</string>
+    <string name="contact_detail_tab_info">Info</string>
+    <string name="contact_detail_name">Name</string>
+    <string name="contact_detail_uid">UserID</string>
+    <string name="contact_detail_last_met">Last Met</string>
+    <string name="contact_detail_group_membership">Known group membership</string>
+    <string name="contact_detail_nb_status_sent">Nb of messages sent</string>
+    <string name="contact_detail_nb_status_rcvd">Nb of message received</string>
+    <string name="contact_detail_message_sent">Messages sent</string>
+    <string name="contact_detail_message_received">Messages Received</string>
+    <string name="contact_detail_interface">Interface</string>
+    <string name="contact_detail_message_bluetooth_mac">Bluetooth MAC Address</string>
+    <string name="contact_detail_message_bluetooth_name">Bluetooth Device Name</string>
+    <string name="contact_detail_message_wifi_mac">Wifi Mac Address</string>
+
+    <string name="group_action_invite_user">invite a user</string>
+    <string name="group_action_delete">delete group</string>
+    <string name="group_confirm_delete">Are you sure you want to delete every status from this group ? This action cannot be cancelled.</string>
+    <string name="group_action_leave">leave group</string>
+    <string name="group_confirm_leave">Are you sure you want to leave this group ? Every status from this group will be destroyed.</string>
+    <string name="group_private_confirm_leave">Are you sure you want to leave this group ? Every status from this group will be destroyed. This group being private, you will have to be invited by a member to re-join the group.</string>
+
+    <string name="contact_is_local">local contact</string>
+    <string name="contact_has_never_been_met">contact never met</string>
+    <string name="contact_last_met">last met:</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Filter</string>
+    <string name="action_compose">Compose</string>
+    <string name="action_network">Networking</string>
+    <string name="action_create_group">Create a new group</string>
+    <string name="action_scan_qrcode">Scan an invitation (QRCode)</string>
+    <string name="action_input_key">Manually input group key</string>
+    <string name="action_new_discussion">New Discussion</string>
+
+    <string name="popup_compose_title">Compose</string>
+    <string name="popup_compose_chat_title">Chat !</string>
+    <string name="chat_input_hint">Type a message</string>
+    <string name="popup_compose_group">Group: </string>
+    <string name="popup_create_group">Create new group</string>
+    <string name="popup_create_group_checkbox_private">Private Group</string>
+    <string name="popup_create_group_checkbox_public">Public Group</string>
+    <string name="popup_input_group_key">Input group key</string>
+
+    <string name="popup_question_yes">Yes</string>
+    <string name="popup_question_no">No</string>
+    <string name="popup_question_remember">remember my choice</string>
+
+    <string name="menu_interfaces_title">Interfaces</string>
+    <string name="menu_neighbors_title">Neighborhood</string>
+    <string name="interface_bluetooth">Bluetooth</string>
+    <string name="bluetooth_disabled">disable</string>
+    <string name="bluetooth_enabled">enable</string>
+    <string name="bluetooth_discoverable">discoverable</string>
+    <string name="interface_wifi">WiFi</string>
+    <string name="wifi_disabled">disabled</string>
+    <string name="wifi_normal">normal</string>
+    <string name="wifi_AP">access point</string>
+    <string name="drawer_force_scan">Force Scan</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="settings_action_wipe_status">Clear status from database</string>
+    <string name="settings_action_wipe_chat">Clear chat messages from database</string>
+    <string name="settings_storage">Storage</string>
+    <string name="settings_usage">Data usage</string>
+    <string name="settings_storage_total">TOTAL</string>
+    <string name="settings_clear_data">CLEAR DATA</string>
+    <string name="settings_clear_push">Clear Statuses</string>
+    <string name="settings_clear_chat">Clear Chat</string>
+    <string name="settings_clear_files">Clear Files</string>
+    <string name="settings_detail_app">Application size</string>
+    <string name="settings_detail_db">Database size</string>
+    <string name="settings_detail_file">File total size</string>
+    <string name="settings_statistic">Statistic</string>
+    <string name="settings_misc">Miscellaneous</string>
+    <string name="settings_debug">Debug</string>
+    <string name="settings_about">About</string>
+    <string name="settings_freedom">Free Software Licence</string>
+
+    <string name="settings_startonboot">Start on boot</string>
+
+    <string name="debug_text">logcat debugging</string>
+
+    <string name="statistic_disclaimer">DisruptedSystems takes part in some research project and wish to collect some data. Those data are anonymous and cannot be link to any device or any individual. By sharing those data, you will help us design better algorithms and protocols. If you want to know more about our data policy, please visit http://disruptedsystems.org/documentation/#statistics. Check the following check box if you want to participate.</string>
+    <string name="statistic_usage">I want to participate</string>
+
+    <string name="setting_about_rumble">Release Name</string>
+    <string name="setting_about_project">Project Account</string>
+    <string name="setting_about_developer">Developed By</string>
+
+    <string name="status_created">created: </string>
+    <string name="status_received">received: </string>
+    <string name="second_ago">a second ago</string>
+    <string name="seconds_ago">seconds ago</string>
+    <string name="minute_ago">a minute ago</string>
+    <string name="minutes_ago">mins ago</string>
+    <string name="day_ago">a day ago</string>
+    <string name="days_ago">days ago</string>
+    <string name="hour_ago">an hour ago</string>
+    <string name="hours_ago">hours ago</string>
+    <string name="month_ago">a month ago</string>
+    <string name="months_ago">months ago</string>
+    <string name="year_ago">a year ago</string>
+    <string name="years_ago">years ago</string>
+    <string name="too_old">it\'s been a while</string>
+
+    <string name="filter_not_subscribed">not subscribed</string>
+    <string name="filter_subscribed">subscribed</string>
+    <string name="toast_subscribed_to">Subscribed to</string>
+
+    <string name="welcome_notice">Hi there, Welcome to the Rumble network, where the infrastructure is carried by the hand of the users! Every message here will be forwarded to devices around you</string>
+    <string name="swipe_left">&lt;&lt;&lt;--- Navigation drawer is accessible on the left pane, swipe to discover</string>
+    <string name="swipe_right">Network drawer is accessible on the right pane, swipe to discover ---&gt;&gt;&gt;</string>
+    <string name="swipe_down">Whenever you receive new message, you can refresh the list by swiping down</string>
+    <string name="chat_message_tuto">Here is the chat window to send and receive real time message with the people around you. Those messages aren\'t forwarded any further. Open the network drawer to see if there is people around you and start chatting with them.</string>
+    <string name="login">Start!</string>
+    <string name="login_username">Username</string>
+    <string name="login_bad_username">Bad username, pick a one-liner username (no more than 20 characters)!</string>
+    <string name="warning_notice">Even though you can create private groups, all the messages are public by default so be careful with what you disclose</string>
+    <string name="default_rumble_group_desc">open and public group for delay tolerant communication with Rumble.</string>
+    <string name="description">Description:</string>
+
+</resources>

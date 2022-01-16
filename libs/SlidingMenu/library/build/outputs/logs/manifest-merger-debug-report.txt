@@ -1,0 +1,29 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml:2:1-7:12
+INJECTED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml:2:1-7:12
+INJECTED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml:2:1-7:12
+	package
+		ADDED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml:3:5-50
+		INJECTED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml
+		INJECTED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml
+	android:versionName
+		ADDED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml:5:5-30
+	xmlns:android
+		ADDED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml:4:5-28
+uses-sdk
+INJECTED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml
+INJECTED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml
+INJECTED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml
+INJECTED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml
+		ADDED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml
+		INJECTED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml
+		ADDED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml
+		INJECTED from /media/fuad/189B0747047C2AD9/IBits File/Project/iBitsUI/libs/SlidingMenu/library/AndroidManifest.xml

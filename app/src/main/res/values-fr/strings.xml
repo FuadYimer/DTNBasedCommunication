@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (C) 2014 Lucien Loiseau
+  ~ This file is part of Rumble.
+  ~ Rumble is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Rumble is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License along
+  ~ with Rumble.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+
+    <string name="app_name">Rumble</string>
+    <string name="bluetooth_state_on_openning">bluetooth_state_on_openning</string>
+    <string name="wifi_state_on_openning">wifi_state_on_openning</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+
+    <string name="tab_public">Publique</string>
+    <string name="tab_group">Groupe</string>
+    <string name="tab_chat">Chat</string>
+
+    <string name="navigation_drawer_open">Ouvrir le panneau de navigation</string>
+    <string name="navigation_drawer_close">Fermer le panneau de navigation</string>
+    <string name="navigation_drawer_title">Navigation</string>
+    <string name="navigation_drawer_group">Groupes</string>
+    <string name="navigation_drawer_contacts">Contacts</string>
+    <string name="navigation_drawer_status_favorites">Favoris</string>
+    <string name="navigation_drawer_settings">Configuration</string>
+    <string name="navigation_drawer_exit">Éteindre</string>
+
+    <string name="group_detail_tab_message">Messages</string>
+    <string name="group_detail_tab_members">Membres</string>
+
+    <string name="status_more_option_like">Aimer</string>
+    <string name="status_more_option_save">Sauver</string>
+    <string name="status_more_option_delete">Supprimer</string>
+
+    <string name="contact_is_local">contact local</string>
+    <string name="contact_has_never_been_met">contact jamais rencontré</string>
+    <string name="contact_last_met">vu il y a </string>
+
+    <string name="action_settings">Configuration</string>
+    <string name="action_search">Filtre</string>
+    <string name="action_compose">Composer</string>
+    <string name="action_network">Réseau</string>
+    <string name="action_create_group">Nouveau Groupe</string>
+    <string name="action_scan_qrcode">Scanner un groupe</string>
+    <string name="action_new_discussion">Nouvelle discussion</string>
+
+    <string name="popup_compose_title">Composer</string>
+    <string name="popup_compose_chat_title">Chat !</string>
+    <string name="chat_input_hint">Taper un message</string>
+    <string name="popup_compose_group">Groupe: </string>
+    <string name="popup_create_group">Créer un nouveau groupe</string>
+    <string name="popup_create_group_checkbox_private">Groupe privé</string>
+    <string name="popup_create_group_checkbox_public">Groupe publique</string>
+
+    <string name="popup_question_yes">Yes</string>
+    <string name="popup_question_no">No</string>
+    <string name="popup_question_remember">se souvenir de mon choix</string>
+
+    <string name="menu_interfaces_title">Interfaces</string>
+    <string name="menu_neighbors_title">Voisinnage</string>
+    <string name="interface_bluetooth">Bluetooth</string>
+    <string name="interface_wifi">WiFi</string>
+    <string name="drawer_force_scan">Forcer le scan</string>
+
+    <string name="settings_title">Configuration</string>
+    <string name="settings_action_wipe_status">Supprimer la base de donnée des statuts</string>
+    <string name="settings_action_wipe_chat">Supprimer la base de donnée des discussions</string>
+
+    <string name="status_created">crée il y a : </string>
+    <string name="status_received">reçu il y a : </string>
+    <string name="second_ago">une seconde</string>
+    <string name="seconds_ago">secondes</string>
+    <string name="minute_ago">une minute</string>
+    <string name="minutes_ago">minutes</string>
+    <string name="day_ago">un jour</string>
+    <string name="days_ago">jours</string>
+    <string name="hour_ago">une heure</string>
+    <string name="hours_ago">heures</string>
+    <string name="month_ago">un mois</string>
+    <string name="months_ago">mois</string>
+    <string name="year_ago">un an</string>
+    <string name="years_ago">ans</string>
+    <string name="too_old">fort longtemps</string>
+
+    <string name="filter_not_subscribed">non inscrit</string>
+    <string name="filter_subscribed">inscrit</string>
+    <string name="toast_subscribed_to">souscrit à</string>
+
+    <string name="welcome_notice">Salut! Bienvenue sur Rumble là où la parole est libre et non censurable :)</string>
+    <string name="warning_notice">Tout les messages sur ce réseau son publique par défaut, donc attention à ce que vous dites!</string>
+    <string name="login">Start!</string>
+    <string name="bluetooth_disabled">désactivé</string>
+    <string name="bluetooth_discoverable">découvrable</string>
+    <string name="bluetooth_enabled">activé</string>
+    <string name="contact_detail_interface">Interface</string>
+    <string name="contact_detail_last_met">Rencontré il y a</string>
+    <string name="contact_detail_message_bluetooth_mac">Adresse MAC Bluetooth</string>
+    <string name="contact_detail_message_bluetooth_name">Identifiant Bluetooth</string>
+    <string name="contact_detail_message_received">Messages reçus</string>
+    <string name="contact_detail_message_sent">Messages envoyés</string>
+    <string name="contact_detail_message_wifi_mac">Adresse MAC Wifi</string>
+    <string name="contact_detail_name">Nom</string>
+    <string name="contact_detail_nb_status_rcvd">Nombre de messages reçus</string>
+    <string name="contact_detail_nb_status_sent">Nombre de message envoyés</string>
+    <string name="contact_detail_tab_info">Information</string>
+    <string name="contact_detail_tab_message">Messages</string>
+    <string name="contact_detail_uid">UserID</string>
+    <string name="wifi_AP">Point d\'accès Wifi</string>
+    <string name="wifi_disabled">Désactivé</string>
+    <string name="wifi_normal">Normal</string>
+    <string name="group_action_delete">supprimer le groupe</string>
+    <string name="group_action_invite_user">inviter un nouveau membre</string>
+    <string name="contact_detail_group_membership">Membre des groupes</string>
+    <string name="chat_message_tuto">Ceci est la fenêtre de conversation instantannée pour envoyer et recevoir des messages avec les personnes autour de vous. Ces messages ne sont pas propagés plus loin. Ouvrez la fenêtre de réseau pour voir qui se trouve autour de vous.</string>
+    <string name="login_username">Username</string>
+    <string name="navigation_drawer_hashtag">Hashtags</string>
+    <string name="settings_about">À propos</string>
+    <string name="settings_clear_chat">Supprimer conversations</string>
+    <string name="settings_clear_data">SUPPRIMER DONNÉES</string>
+    <string name="settings_clear_files">Supprimer Fichiers</string>
+    <string name="settings_clear_push">Supprimer statuts</string>
+    <string name="settings_detail_app">Taille de l\'application</string>
+    <string name="settings_detail_db">Taille de la base de donnée</string>
+    <string name="settings_detail_file">Taille total des fichiers</string>
+    <string name="settings_freedom">Licence Open Source</string>
+    <string name="settings_statistic">Statistique</string>
+    <string name="settings_storage">Espace</string>
+    <string name="settings_storage_total">TOTAL</string>
+    <string name="settings_usage">Utilisation des données</string>
+    <string name="swipe_down">Lorsque vous recevez un nouveau message, vous pouvez rafraîchir la liste en la faisant glisser vers le bas</string>
+    <string name="swipe_left">&lt;&lt;&lt;--- La fenêtre de navigation est accessible à gauche, faites glisser la fenêtre pour la découvrir</string>
+    <string name="swipe_right">La fenêtre de réseau est accessible à droite, faites glisser la fenêtre pour la découvrir ---&gt;&gt;&gt;</string>
+    <string name="statistic_disclaimer">DisruptedSystems prend par à des projets de recherche et souhaiterait collecter certaines données. Ces données sont complètement anonyme et ne permettent pas de faire le lien avec un appareil en particulier ou avec un individu. En partageant ces données, vous nous aidez à améliorer nos algorithmes et nos protocoles. Si vous voulez en savoir plus sur notre utilisation des données, visitez  http://disruptedsystems.org/documentation/#statistics. Cliquez sur la checkbox si vous souhaitez participer.</string>
+    <string name="statistic_usage">Je veux prendre part à la campagne</string>
+    <string name="setting_about_developer">Application développé par</string>
+    <string name="setting_about_project">Compte du projet</string>
+    <string name="setting_about_rumble">Nom de la release</string>
+    <string name="status_viewer">Status</string>
+    <string name="settings_debug">Debug</string>
+    <string name="debug_text">logcat debugging</string>
+    <string name="login_bad_username">Le pseudo doit tenir sur une ligne et faire moins de 20 caractères !</string>
+    <string name="group_action_leave">Quitter le groupe</string>
+    <string name="group_confirm_delete">Êtes vous sur de vouloir supprimer tout les status de ce groupe ? cette action est irréversible.</string>
+    <string name="group_confirm_leave">Êtes vous sur de vouloir quitter ce groupe ? Tout les status de ce groupe seront supprimés.</string>
+    <string name="group_private_confirm_leave">Êtes vous sur de vouloir quitter ce groupe ? Tout les status de ce groupe seront supprimés. Ce groupe étant privée, vous devrez vous faire inviter par un membre si vous souhaitez le rejoindre plus tard.</string>
+    <string name="popup_input_group_key">Entrez la clé du groupe</string>
+    <string name="action_input_key">Taper la clé de groupe</string>
+    <string name="default_rumble_group_desc">groupe publique pour la communication tolérant aux délais avec Rumble.</string>
+    <string name="description">Description:</string>
+
+</resources>
