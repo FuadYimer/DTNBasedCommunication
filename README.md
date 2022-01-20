@@ -9,5 +9,6 @@ This system aims to create an alternative communication platform for healthcare 
 Clone the project repo using the command
 
 ```
-$ git clone https://github.com/FuadYimer/DTNBasedCommunicationUI.git
+First install github and Android Studio
+$ git clone https://github.com/FuadYimer/DTNBasedCommunication.git
 ```
