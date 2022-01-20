@@ -17,10 +17,11 @@
 
 package org.disrupted.rumble.database.objects;
 
+import android.util.Log;
+
 import org.disrupted.rumble.app.RumbleApplication;
 import org.disrupted.rumble.database.DatabaseFactory;
 import org.disrupted.rumble.util.HashUtil;
-import org.disrupted.rumble.util.Log;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -94,7 +95,6 @@ public class Contact {
     }
 
     public static boolean checkUsername(String username) {
-        Log.d("Check" , "Check User Name");
         if(username.length() > CONTACT_NAME_MAX_SIZE || username.trim().length() == 0)
             return false;
         if(username.contains("\n"))

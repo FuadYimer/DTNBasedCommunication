@@ -28,12 +28,12 @@ package org.disrupted.rumble.network.linklayer;
  */
 public interface LinkLayerAdapter {
 
-    public boolean isActivated();
+     boolean isActivated();
 
-    public String getLinkLayerIdentifier();
+     String getLinkLayerIdentifier();
 
-    public void linkStart();
+     void linkStart();
 
-    public void linkStop();
+     void linkStop();
 
 }

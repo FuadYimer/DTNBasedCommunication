@@ -56,9 +56,7 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import de.greenrobot.event.EventBus;
 
 
-/**
- * @author Lucien Loiseau
- */
+
 public class HomeActivity extends AppCompatActivity {
 
     private static final String TAG = "HomeActivity";
@@ -138,7 +136,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_MENU) {
-          //  slidingMenu.toggle();
+            slidingMenu.toggle();
             return true;
         }
         if(keyCode == KeyEvent.KEYCODE_BACK) {

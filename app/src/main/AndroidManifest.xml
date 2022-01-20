@@ -52,25 +52,25 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".userinterface.activity.HomeActivity" android:screenOrientation="portrait" android:label="@string/app_name" android:windowSoftInputMode="adjustResize|stateHidden" android:theme="@style/Theme.AppCompat.NoActionBar" tools:ignore="Instantiatable"/>
-        <activity android:name=".userinterface.activity.GroupListActivity" android:screenOrientation="portrait" android:uiOptions="splitActionBarWhenNarrow" android:theme="@style/Theme.AppCompat.NoActionBar" tools:ignore="Instantiatable">
+        <activity android:name=".userinterface.activity.HomeActivity" android:screenOrientation="fullSensor" android:label="@string/app_name" android:windowSoftInputMode="adjustResize|stateHidden" android:theme="@style/Theme.AppCompat.NoActionBar" tools:ignore="Instantiatable"/>
+        <activity android:name=".userinterface.activity.GroupListActivity" android:screenOrientation="fullSensor" android:uiOptions="splitActionBarWhenNarrow" android:theme="@style/Theme.AppCompat.NoActionBar" tools:ignore="Instantiatable">
             <meta-data android:name="android.support.UI_OPTIONS" android:value="splitActionBarWhenNarrow"/>
         </activity>
-        <activity android:name=".userinterface.activity.GroupDetailActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name=".userinterface.activity.ContactListActivity" android:screenOrientation="portrait" android:uiOptions="splitActionBarWhenNarrow">
+        <activity android:name=".userinterface.activity.GroupDetailActivity" android:screenOrientation="fullSensor" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".userinterface.activity.ContactListActivity" android:screenOrientation="fullSensor" android:uiOptions="splitActionBarWhenNarrow">
             <meta-data android:name="android.support.UI_OPTIONS" android:value="splitActionBarWhenNarrow"/>
         </activity>
-        <activity android:name=".userinterface.activity.ContactDetailActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.NoActionBar" tools:ignore="Instantiatable"/>
-        <activity android:name=".userinterface.activity.HashtagListActivity" android:screenOrientation="portrait" android:uiOptions="splitActionBarWhenNarrow" tools:ignore="Instantiatable">
+        <activity android:name=".userinterface.activity.ContactDetailActivity" android:screenOrientation="fullSensor" android:theme="@style/Theme.AppCompat.NoActionBar" tools:ignore="Instantiatable"/>
+        <activity android:name=".userinterface.activity.HashtagListActivity" android:screenOrientation="fullSensor" android:uiOptions="splitActionBarWhenNarrow" tools:ignore="Instantiatable">
             <meta-data android:name="android.support.UI_OPTIONS" android:value="splitActionBarWhenNarrow"/>
         </activity>
         <activity android:name=".userinterface.activity.HashtagDetailActivity" android:screenOrientation="portrait" android:uiOptions="splitActionBarWhenNarrow" tools:ignore="Instantiatable">
             <meta-data android:name="android.support.UI_OPTIONS" android:value="splitActionBarWhenNarrow"/>
         </activity>
-        <activity android:name=".userinterface.activity.PopupComposeStatus" android:screenOrientation="portrait" android:theme="@style/PopupActivity" android:windowSoftInputMode="adjustPan|adjustResize|stateVisible"/>
-        <activity android:name=".userinterface.activity.PopupCreateGroup" android:screenOrientation="portrait" android:theme="@style/PopupActivity" android:windowSoftInputMode="adjustPan|adjustResize|stateVisible"/>
-        <activity android:name=".userinterface.activity.PopupInputGroupKey" android:screenOrientation="portrait" android:theme="@style/PopupActivity" android:windowSoftInputMode="adjustPan|adjustResize|stateVisible"/>
-        <activity android:name=".userinterface.activity.DisplayQRCode" android:screenOrientation="portrait" tools:ignore="Instantiatable"
+        <activity android:name=".userinterface.activity.PopupComposeStatus" android:screenOrientation="fullSensor" android:theme="@style/PopupActivity" android:windowSoftInputMode="adjustPan|adjustResize|stateVisible"/>
+        <activity android:name=".userinterface.activity.PopupCreateGroup" android:screenOrientation="fullSensor" android:theme="@style/PopupActivity" android:windowSoftInputMode="adjustPan|adjustResize|stateVisible"/>
+        <activity android:name=".userinterface.activity.PopupInputGroupKey" android:screenOrientation="fullSensor" android:theme="@style/PopupActivity" android:windowSoftInputMode="adjustPan|adjustResize|stateVisible"/>
+        <activity android:name=".userinterface.activity.DisplayQRCode" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"
             android:exported="true">
             <intent-filter>
                 <action android:name="org.disrupted.rumble.userinterface.activity.DisplayQRCode"/>
@@ -82,19 +82,19 @@
                 <action android:name="org.disrupted.rumble.userinterface.activity.DisplayImage"/>
             </intent-filter>
         </activity>
-        <activity android:name=".userinterface.activity.DisplayStatusActivity" android:screenOrientation="portrait" tools:ignore="Instantiatable"
+        <activity android:name=".userinterface.activity.DisplayStatusActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"
             android:exported="true">
             <intent-filter>
                 <action android:name="org.disrupted.rumble.userinterface.activity.DisplayStatusActivity"/>
             </intent-filter>
         </activity>
-        <activity android:name=".userinterface.activity.SettingsActivity" android:screenOrientation="portrait" tools:ignore="Instantiatable"> </activity>
-        <activity android:name=".userinterface.activity.settings.LicenceActivity" android:screenOrientation="portrait" tools:ignore="Instantiatable"> </activity>
-        <activity android:name=".userinterface.activity.settings.StatisticActivity" android:screenOrientation="portrait" tools:ignore="Instantiatable"> </activity>
-        <activity android:name=".userinterface.activity.settings.MiscellaneousActivity" android:screenOrientation="portrait"> </activity>
-        <activity android:name=".userinterface.activity.settings.DebugActivity" android:screenOrientation="portrait"> </activity>
-        <activity android:name=".userinterface.activity.settings.AboutActivity" android:screenOrientation="portrait" tools:ignore="Instantiatable"> </activity>
-        <activity android:name=".userinterface.activity.settings.StorageActivity" android:screenOrientation="portrait" tools:ignore="Instantiatable"> </activity>
+        <activity android:name=".userinterface.activity.SettingsActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
+        <activity android:name=".userinterface.activity.settings.LicenceActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
+        <activity android:name=".userinterface.activity.settings.StatisticActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
+        <activity android:name=".userinterface.activity.settings.MiscellaneousActivity" android:screenOrientation="fullSensor"> </activity>
+        <activity android:name=".userinterface.activity.settings.DebugActivity" android:screenOrientation="fullSensor"> </activity>
+        <activity android:name=".userinterface.activity.settings.AboutActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
+        <activity android:name=".userinterface.activity.settings.StorageActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
         <activity android:name="info.vividcode.android.zxing.CaptureActivity" android:theme="@style/Theme.ZXingCaptureActivity" android:screenOrientation="landscape"
             tools:ignore="MissingClass"> </activity>
         <service android:name=".network.NetworkCoordinator"> </service>

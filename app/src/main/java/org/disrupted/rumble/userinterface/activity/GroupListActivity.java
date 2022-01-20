@@ -68,12 +68,12 @@ public class GroupListActivity extends AppCompatActivity {
         /* setting up the toolbar */
         Toolbar toolbar = (Toolbar) findViewById(R.id.group_toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         setTitle(R.string.navigation_drawer_group);
 
         /* setting up the list */
-        Fragment fragmentGroupList = new Fragment();
+        Fragment fragmentGroupList = new FragmentGroupList();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, fragmentGroupList)
                 .commit();
@@ -144,8 +144,6 @@ public class GroupListActivity extends AppCompatActivity {
     };
 
 
-
-
     /*
      * The QR-Code is a Base64 encoding of the following:
      *
@@ -159,22 +157,23 @@ public class GroupListActivity extends AppCompatActivity {
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(data == null)
+        super.onActivityResult(requestCode, resultCode, data);
+        if (data == null)
             return;
         CaptureResult result = CaptureResult.parseResultIntent(data);
         if ((result != null) && (result.getContents() != null)) {
-                Log.d(TAG, result.getContents());
-                String base64ID = new String(result.getContents().getBytes());
-                Group group = Group.getGroupFromBase64ID(base64ID);
-                if(group == null) {
-                    Snackbar.make(coordinatorLayout, "no group were added", Snackbar.LENGTH_SHORT)
-                            .show();
-                } else {
-                    // add Group to database
-                    EventBus.getDefault().post(new UserJoinGroup(group));
-                    Snackbar.make(coordinatorLayout, "the group " + group.getName() + " has been added", Snackbar.LENGTH_SHORT)
-                            .show();
-                }
+            Log.d(TAG, result.getContents());
+            String base64ID = new String(result.getContents().getBytes());
+            Group group = Group.getGroupFromBase64ID(base64ID);
+            if (group == null) {
+                Snackbar.make(coordinatorLayout, "no group were added", Snackbar.LENGTH_SHORT)
+                        .show();
+            } else {
+                // add Group to database
+                EventBus.getDefault().post(new UserJoinGroup(group));
+                Snackbar.make(coordinatorLayout, "the group " + group.getName() + " has been added", Snackbar.LENGTH_SHORT)
+                        .show();
+            }
         }
     }
 

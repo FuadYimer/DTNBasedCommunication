@@ -60,11 +60,10 @@ public class RoutingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        android.util.Log.d(TAG, "CHeck here routing activity");
+
         if(DatabaseFactory.getContactDatabase(this).getLocalContact() != null) {
 
             if(checkRumblePermission())
-
                 gotoHomeActivity();
         } else {
             Intent loginScreen = new Intent(this, LoginScreen.class );

@@ -197,7 +197,8 @@ public class StatusRecyclerAdapter extends RecyclerView.Adapter<StatusRecyclerAd
                                 Log.d(TAG, "trying to open: " + filename);
 				                Intent intent = new Intent();
 				                intent.setAction(Intent.ACTION_VIEW);
-				                intent.setDataAndType(Uri.parse("file://"+attachedFile.getAbsolutePath()), "image/*");
+				               // intent.setDataAndType(Uri.parse("file://"+attachedFile.getAbsolutePath()), "image/*");
+                                intent.setDataAndType(Uri.parse("content://"+attachedFile.getAbsolutePath()), "image/*");
 				                activity.startActivity(intent);
                             }
                         });

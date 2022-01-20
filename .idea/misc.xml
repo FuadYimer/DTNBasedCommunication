@@ -3,9 +3,35 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../../home/fuad/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.22" />
+        <entry key="app/src/main/res/drawable/shadowright.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_contact_detail.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/layout/activity_display_image.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_display_status.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_group_detail.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_group_list.xml" value="0.13816343723673125" />
+        <entry key="app/src/main/res/layout/activity_hashtag_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.22564102564102564" />
+        <entry key="app/src/main/res/layout/activity_login_screen.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_popup_compose_status.xml" value="0.17447916666666666" />
+        <entry key="app/src/main/res/layout/activity_popup_create_group.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_popup_input_group_key.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_settings.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/badge_tab_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_activity.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_chatmessage_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_contact_info.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_contact_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_navigation_drawer.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_status_list.xml" value="0.20853080568720378" />
+        <entry key="app/src/main/res/layout/fragment_status_list_no_coordinatorlayout.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/item_group_list.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_icontext.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_status_list.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/slidingmenu_navigation_drawer.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/slidingmenu_network_drawer.xml" value="0.16" />
+        <entry key="app/src/main/res/menu/group_list_menu.xml" value="0.21" />
+        <entry key="app/src/main/res/menu/popup_add_group_options.xml" value="0.33" />
       </map>
     </option>
   </component>
