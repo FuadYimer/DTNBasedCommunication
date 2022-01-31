@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--
-  ~ Copyright (C) 2014 Lucien Loiseau
-  ~
-  ~ This file is part of Rumble.
-  ~
-  ~ Rumble is free software: you can redistribute it and/or modify
-  ~ it under the terms of the GNU General Public License as published by
-  ~ the Free Software Foundation, either version 3 of the License, or
-  ~ (at your option) any later version.
-  ~
-  ~ Rumble is distributed in the hope that it will be useful,
-  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~ GNU General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU General Public License
-  ~ along with Rumble.  If not, see <http://www.gnu.org/licenses/>.
-  -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
@@ -160,6 +143,8 @@
                     android:paddingLeft="5dp"
                     android:paddingBottom="5dp" />
 
+
+
                 <ImageView
 
                     android:id="@+id/status_item_attached_image"
@@ -170,6 +155,16 @@
                     android:scaleType="fitXY"
                     android:visibility="gone" />
             </LinearLayout>
+            <TextView
+                android:id="@+id/file_path"
+                style="@style/Status.Body"
+                android:text="File Path will be shown here"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:paddingLeft="5dp"
+                android:paddingBottom="5dp" />
         </LinearLayout>
     </RelativeLayout>
 

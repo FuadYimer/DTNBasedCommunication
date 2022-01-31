@@ -1,0 +1,113 @@
+
+package org.disrupted.ibits.userinterface.fragments;
+
+import android.os.Bundle;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import org.disrupted.ibits.R;
+import org.disrupted.ibits.database.ContactDatabase;
+import org.disrupted.ibits.database.DatabaseExecutor;
+import org.disrupted.ibits.database.DatabaseFactory;
+import org.disrupted.ibits.database.events.ContactDeletedEvent;
+import org.disrupted.ibits.database.events.ContactInsertedEvent;
+import org.disrupted.ibits.database.objects.Contact;
+import org.disrupted.ibits.userinterface.adapter.ContactRecyclerAdapter;
+
+import java.util.ArrayList;
+
+import de.greenrobot.event.EventBus;
+
+/**
+ * @author
+ */
+public class FragmentContactList  extends Fragment {
+
+    public static final String TAG = "FragmentContactList";
+
+
+    private View mView;
+    private RecyclerView mRecyclerView;
+    private ContactRecyclerAdapter contactRecyclerAdapter;
+    private String   filter_gid = null;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+
+        Bundle args = getArguments();
+        if(args != null) {
+            this.filter_gid = args.getString("GroupID");
+        }
+
+        mView = inflater.inflate(R.layout.fragment_contact_list, container, false);
+        mRecyclerView = (RecyclerView) mView.findViewById(R.id.contact_list);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        contactRecyclerAdapter = new ContactRecyclerAdapter(getActivity());
+        mRecyclerView.setAdapter(contactRecyclerAdapter);
+        EventBus.getDefault().register(this);
+        getContactList();
+        return mView;
+    }
+
+    @Override
+    public void onDestroy() {
+        if(EventBus.getDefault().isRegistered(this))
+            EventBus.getDefault().unregister(this);
+        super.onDestroy();
+    }
+
+    public void getContactList() {
+        ContactDatabase.ContactQueryOption options = new ContactDatabase.ContactQueryOption();
+        options.answerLimit = 20;
+        options.order_by = ContactDatabase.ContactQueryOption.ORDER_BY.LAST_TIME_MET;
+
+        if(filter_gid != null) {
+            options.filterFlags |= ContactDatabase.ContactQueryOption.FILTER_GROUP;
+            options.gid = filter_gid;
+        } else {
+            options.filterFlags |= ContactDatabase.ContactQueryOption.FILTER_LOCAL;
+            options.local = false;
+        }
+        DatabaseFactory.getContactDatabase(getActivity())
+                .getContacts(options, onContactsLoaded);
+    }
+    private DatabaseExecutor.ReadableQueryCallback onContactsLoaded = new DatabaseExecutor.ReadableQueryCallback() {
+        @Override
+        public void onReadableQueryFinished(final Object result) {
+            if(getActivity() == null)
+                return;
+            getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ArrayList<Contact> answer = (ArrayList<Contact>)(result);
+                        contactRecyclerAdapter.swap(answer);
+                    }
+                }
+            );
+        }
+    };
+
+    public void onEvent(ContactInsertedEvent event) {
+        getContactList();
+    }
+    public void onEvent(ContactDeletedEvent event) {
+        getContactList();
+    }
+
+}

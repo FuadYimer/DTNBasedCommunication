@@ -1,5 +1,6 @@
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="org.disrupted.rumble">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" package="org.disrupted.ibits">
     <!--
           ~ Permission for networking related operation
            -->
@@ -42,9 +43,10 @@
     <uses-permission android:required="false" android:name="android.permission.VIBRATE"/>
     <!-- Permission to boot on startup if enabled in the settings  -->
     <uses-permission android:required="false" android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <application android:icon="@drawable/ic_launcher_rumble" android:label="@string/app_name" android:name=".app.RumbleApplication" android:theme="@style/Theme.AppCompat">
-        <activity android:name=".userinterface.activity.LoginScreen"> </activity>
-        <activity android:name=".userinterface.activity.RoutingActivity"
+    <application android:icon="@drawable/ic_launcher_rumble"
+        android:label="@string/app_name" android:name="org.disrupted.ibits.app.RumbleApplication" android:theme="@style/Theme.AppCompat">
+        <activity android:name="org.disrupted.ibits.userinterface.activity.LoginScreen"> </activity>
+        <activity android:name="org.disrupted.ibits.userinterface.activity.RoutingActivity"
             android:exported="true"
             tools:ignore="Instantiatable,IntentFilterExportedReceiver">
             <intent-filter>
@@ -52,53 +54,53 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".userinterface.activity.HomeActivity" android:screenOrientation="fullSensor" android:label="@string/app_name" android:windowSoftInputMode="adjustResize|stateHidden" android:theme="@style/Theme.AppCompat.NoActionBar" tools:ignore="Instantiatable"/>
-        <activity android:name=".userinterface.activity.GroupListActivity" android:screenOrientation="fullSensor" android:uiOptions="splitActionBarWhenNarrow" android:theme="@style/Theme.AppCompat.NoActionBar" tools:ignore="Instantiatable">
+        <activity android:name="org.disrupted.ibits.userinterface.activity.HomeActivity" android:screenOrientation="fullSensor" android:label="@string/app_name" android:windowSoftInputMode="adjustResize|stateHidden" android:theme="@style/Theme.AppCompat.NoActionBar" tools:ignore="Instantiatable"/>
+        <activity android:name="org.disrupted.ibits.userinterface.activity.GroupListActivity" android:screenOrientation="fullSensor" android:uiOptions="splitActionBarWhenNarrow" android:theme="@style/Theme.AppCompat.NoActionBar" tools:ignore="Instantiatable">
             <meta-data android:name="android.support.UI_OPTIONS" android:value="splitActionBarWhenNarrow"/>
         </activity>
-        <activity android:name=".userinterface.activity.GroupDetailActivity" android:screenOrientation="fullSensor" android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name=".userinterface.activity.ContactListActivity" android:screenOrientation="fullSensor" android:uiOptions="splitActionBarWhenNarrow">
+        <activity android:name="org.disrupted.ibits.userinterface.activity.GroupDetailActivity" android:screenOrientation="fullSensor" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name="org.disrupted.ibits.userinterface.activity.ContactListActivity" android:screenOrientation="fullSensor" android:uiOptions="splitActionBarWhenNarrow">
             <meta-data android:name="android.support.UI_OPTIONS" android:value="splitActionBarWhenNarrow"/>
         </activity>
-        <activity android:name=".userinterface.activity.ContactDetailActivity" android:screenOrientation="fullSensor" android:theme="@style/Theme.AppCompat.NoActionBar" tools:ignore="Instantiatable"/>
-        <activity android:name=".userinterface.activity.HashtagListActivity" android:screenOrientation="fullSensor" android:uiOptions="splitActionBarWhenNarrow" tools:ignore="Instantiatable">
+        <activity android:name="org.disrupted.ibits.userinterface.activity.ContactDetailActivity" android:screenOrientation="fullSensor" android:theme="@style/Theme.AppCompat.NoActionBar" tools:ignore="Instantiatable"/>
+        <activity android:name="org.disrupted.ibits.userinterface.activity.HashtagListActivity" android:screenOrientation="fullSensor" android:uiOptions="splitActionBarWhenNarrow" tools:ignore="Instantiatable">
             <meta-data android:name="android.support.UI_OPTIONS" android:value="splitActionBarWhenNarrow"/>
         </activity>
-        <activity android:name=".userinterface.activity.HashtagDetailActivity" android:screenOrientation="portrait" android:uiOptions="splitActionBarWhenNarrow" tools:ignore="Instantiatable">
+        <activity android:name="org.disrupted.ibits.userinterface.activity.HashtagDetailActivity" android:screenOrientation="portrait" android:uiOptions="splitActionBarWhenNarrow" tools:ignore="Instantiatable">
             <meta-data android:name="android.support.UI_OPTIONS" android:value="splitActionBarWhenNarrow"/>
         </activity>
-        <activity android:name=".userinterface.activity.PopupComposeStatus" android:screenOrientation="fullSensor" android:theme="@style/PopupActivity" android:windowSoftInputMode="adjustPan|adjustResize|stateVisible"/>
-        <activity android:name=".userinterface.activity.PopupCreateGroup" android:screenOrientation="fullSensor" android:theme="@style/PopupActivity" android:windowSoftInputMode="adjustPan|adjustResize|stateVisible"/>
-        <activity android:name=".userinterface.activity.PopupInputGroupKey" android:screenOrientation="fullSensor" android:theme="@style/PopupActivity" android:windowSoftInputMode="adjustPan|adjustResize|stateVisible"/>
-        <activity android:name=".userinterface.activity.DisplayQRCode" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"
+        <activity android:name="org.disrupted.ibits.userinterface.activity.PopupComposeStatus" android:screenOrientation="fullSensor" android:theme="@style/PopupActivity" android:windowSoftInputMode="adjustPan|adjustResize|stateVisible"/>
+        <activity android:name="org.disrupted.ibits.userinterface.activity.PopupCreateGroup" android:screenOrientation="fullSensor" android:theme="@style/PopupActivity" android:windowSoftInputMode="adjustPan|adjustResize|stateVisible"/>
+        <activity android:name="org.disrupted.ibits.userinterface.activity.PopupInputGroupKey" android:screenOrientation="fullSensor" android:theme="@style/PopupActivity" android:windowSoftInputMode="adjustPan|adjustResize|stateVisible"/>
+        <activity android:name="org.disrupted.ibits.userinterface.activity.DisplayQRCode" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"
             android:exported="true">
             <intent-filter>
                 <action android:name="org.disrupted.rumble.userinterface.activity.DisplayQRCode"/>
             </intent-filter>
         </activity>
-        <activity android:name=".userinterface.activity.DisplayImage" tools:ignore="Instantiatable"
+        <activity android:name="org.disrupted.ibits.userinterface.activity.DisplayImage" tools:ignore="Instantiatable"
             android:exported="true">
             <intent-filter>
                 <action android:name="org.disrupted.rumble.userinterface.activity.DisplayImage"/>
             </intent-filter>
         </activity>
-        <activity android:name=".userinterface.activity.DisplayStatusActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"
+        <activity android:name="org.disrupted.ibits.userinterface.activity.DisplayStatusActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"
             android:exported="true">
             <intent-filter>
                 <action android:name="org.disrupted.rumble.userinterface.activity.DisplayStatusActivity"/>
             </intent-filter>
         </activity>
-        <activity android:name=".userinterface.activity.SettingsActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
-        <activity android:name=".userinterface.activity.settings.LicenceActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
-        <activity android:name=".userinterface.activity.settings.StatisticActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
-        <activity android:name=".userinterface.activity.settings.MiscellaneousActivity" android:screenOrientation="fullSensor"> </activity>
-        <activity android:name=".userinterface.activity.settings.DebugActivity" android:screenOrientation="fullSensor"> </activity>
-        <activity android:name=".userinterface.activity.settings.AboutActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
-        <activity android:name=".userinterface.activity.settings.StorageActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
+        <activity android:name="org.disrupted.ibits.userinterface.activity.SettingsActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
+        <activity android:name="org.disrupted.ibits.userinterface.activity.settings.LicenceActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
+        <activity android:name="org.disrupted.ibits.userinterface.activity.settings.StatisticActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
+        <activity android:name="org.disrupted.ibits.userinterface.activity.settings.MiscellaneousActivity" android:screenOrientation="fullSensor"> </activity>
+        <activity android:name="org.disrupted.ibits.userinterface.activity.settings.DebugActivity" android:screenOrientation="fullSensor"> </activity>
+        <activity android:name="org.disrupted.ibits.userinterface.activity.settings.AboutActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
+        <activity android:name="org.disrupted.ibits.userinterface.activity.settings.StorageActivity" android:screenOrientation="fullSensor" tools:ignore="Instantiatable"> </activity>
         <activity android:name="info.vividcode.android.zxing.CaptureActivity" android:theme="@style/Theme.ZXingCaptureActivity" android:screenOrientation="landscape"
             tools:ignore="MissingClass"> </activity>
-        <service android:name=".network.NetworkCoordinator"> </service>
-        <receiver android:name=".app.StartOnBoot" android:label="StartOnBoot" android:exported="true">
+        <service android:name="org.disrupted.ibits.network.NetworkCoordinator"> </service>
+        <receiver android:name="org.disrupted.ibits.app.StartOnBoot" android:label="StartOnBoot" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>

@@ -3,35 +3,83 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../../home/fuad/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_dropdown_item.xml" value="0.22" />
         <entry key="../../../../../../home/fuad/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.22" />
+        <entry key="app/src/main/res/drawable-hdpi/interface_btn_bluetooth_toggle.xml" value="0.134" />
+        <entry key="app/src/main/res/drawable-hdpi/interface_btn_wifi_toggle.xml" value="0.134" />
+        <entry key="app/src/main/res/drawable-hdpi/progress_bar_radar.xml" value="0.134" />
+        <entry key="app/src/main/res/drawable/attached_file_option.xml" value="0.172" />
+        <entry key="app/src/main/res/drawable/badge_background.xml" value="0.172" />
+        <entry key="app/src/main/res/drawable/chat_message_shape.xml" value="0.172" />
+        <entry key="app/src/main/res/drawable/filter_shape.xml" value="0.172" />
+        <entry key="app/src/main/res/drawable/group_unread_background.xml" value="0.172" />
+        <entry key="app/src/main/res/drawable/ic_attach_file.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/multistate_button_shape.xml" value="0.134" />
+        <entry key="app/src/main/res/drawable/multistate_button_toggle_shape.xml" value="0.134" />
+        <entry key="app/src/main/res/drawable/popup_button.xml" value="0.134" />
+        <entry key="app/src/main/res/drawable/popup_button_focused.xml" value="0.134" />
+        <entry key="app/src/main/res/drawable/popup_button_pressed.xml" value="0.134" />
+        <entry key="app/src/main/res/drawable/shadow.xml" value="0.134" />
         <entry key="app/src/main/res/drawable/shadowright.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_contact_detail.xml" value="0.17447916666666666" />
+        <entry key="app/src/main/res/drawable/status_selector_read.xml" value="0.134" />
+        <entry key="app/src/main/res/drawable/status_selector_unread.xml" value="0.134" />
+        <entry key="app/src/main/res/drawable/status_shape_read.xml" value="0.134" />
+        <entry key="app/src/main/res/drawable/status_shape_read_selected.xml" value="0.134" />
+        <entry key="app/src/main/res/drawable/status_shape_unread.xml" value="0.134" />
+        <entry key="app/src/main/res/drawable/status_shape_unread_selected.xml" value="0.134" />
+        <entry key="app/src/main/res/drawable/subscription_shape.xml" value="0.134" />
+        <entry key="app/src/main/res/layout/activity_contact_detail.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_display_image.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_display_status.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_display_qrcode.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/activity_display_status.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_group_detail.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_group_list.xml" value="0.13816343723673125" />
-        <entry key="app/src/main/res/layout/activity_hashtag_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_group_list.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_hashtag_detail.xml" value="0.16" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.22564102564102564" />
-        <entry key="app/src/main/res/layout/activity_login_screen.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_popup_compose_status.xml" value="0.17447916666666666" />
+        <entry key="app/src/main/res/layout/activity_login_screen.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_popup_compose_status.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_popup_create_group.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_popup_input_group_key.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_settings_about.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/activity_settings_debug.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/activity_settings_licence.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/activity_settings_misc.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/activity_settings_statistic.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/activity_settings_storage.xml" value="0.175" />
         <entry key="app/src/main/res/layout/badge_tab_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/chatmessage_input_box.xml" value="0.1286231884057971" />
         <entry key="app/src/main/res/layout/fragment_activity.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_chatmessage_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_contact_info.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_contact_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_favorite_list.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/fragment_group_list.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_hashtag_list.xml" value="0.175" />
         <entry key="app/src/main/res/layout/fragment_navigation_drawer.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_network_drawer.xml" value="0.175" />
         <entry key="app/src/main/res/layout/fragment_status_list.xml" value="0.20853080568720378" />
         <entry key="app/src/main/res/layout/fragment_status_list_no_coordinatorlayout.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/item_chatmessage_list.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/item_contact_info_list.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/item_contact_list.xml" value="0.175" />
         <entry key="app/src/main/res/layout/item_group_list.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_hashtag_filter_list.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/item_hashtag_list.xml" value="0.175" />
         <entry key="app/src/main/res/layout/item_icontext.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/item_status_list.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/item_multistate_button.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/item_neighbour_list.xml" value="0.17447916666666666" />
+        <entry key="app/src/main/res/layout/item_status_list.xml" value="0.49411764705882355" />
         <entry key="app/src/main/res/layout/slidingmenu_navigation_drawer.xml" value="0.1" />
         <entry key="app/src/main/res/layout/slidingmenu_network_drawer.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/view_combined_histogram.xml" value="0.17447916666666666" />
+        <entry key="app/src/main/res/layout/view_multistate_button_layout.xml" value="0.17447916666666666" />
+        <entry key="app/src/main/res/layout/view_simple_histogram.xml" value="0.17447916666666666" />
+        <entry key="app/src/main/res/menu/global.xml" value="0.175" />
+        <entry key="app/src/main/res/menu/group_detail_menu.xml" value="0.175" />
         <entry key="app/src/main/res/menu/group_list_menu.xml" value="0.21" />
         <entry key="app/src/main/res/menu/popup_add_group_options.xml" value="0.33" />
+        <entry key="libs/SlidingMenu/library/res/layout/slidingmenumain.xml" value="0.11684782608695653" />
       </map>
     </option>
   </component>

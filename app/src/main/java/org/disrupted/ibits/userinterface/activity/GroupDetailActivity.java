@@ -1,0 +1,169 @@
+package org.disrupted.ibits.userinterface.activity;
+
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.os.Bundle;
+
+import android.view.Menu;
+import android.view.MenuItem;
+
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+
+import org.disrupted.ibits.R;
+import org.disrupted.ibits.database.DatabaseFactory;
+import org.disrupted.ibits.database.objects.Group;
+import org.disrupted.ibits.userinterface.adapter.GroupDetailPagerAdapter;
+import org.disrupted.ibits.userinterface.events.UserDeleteGroup;
+import org.disrupted.ibits.userinterface.events.UserLeaveGroup;
+
+import java.util.Hashtable;
+
+import de.greenrobot.event.EventBus;
+
+/**
+ * @author
+ */
+public class GroupDetailActivity extends AppCompatActivity {
+
+    private static final String TAG = "GroupStatusActivity";
+
+    private Group group;
+    private String groupName;
+    private String groupID;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Bundle args = getIntent().getExtras();
+        groupName = args.getString("GroupName");
+        groupID = args.getString("GroupID");
+
+        group = DatabaseFactory.getGroupDatabase(this).getGroup(groupID);
+
+        setContentView(R.layout.activity_group_detail);
+        setTitle(groupName);
+
+        /* setting up the toolbar */
+        Toolbar toolbar = (Toolbar) findViewById(R.id.group_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        /* setting up the view pager and the tablayout */
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.group_tab_layout);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.group_viewpager);
+        GroupDetailPagerAdapter pagerAdapter = new GroupDetailPagerAdapter(getSupportFragmentManager(), args);
+        viewPager.setAdapter(pagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setSelectedTabIndicatorHeight(10);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.group_detail_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if (id==R.id.group_action_invite) {
+            invite();
+        }
+        if (id==R.id.group_action_delete) {
+            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if (which == DialogInterface.BUTTON_POSITIVE) {
+                        EventBus.getDefault().post(new UserDeleteGroup(groupID));
+                        finish();
+                        overridePendingTransition(R.anim.activity_close_enter, R.anim.activity_close_exit);
+                    }
+                }
+            };
+            AlertDialog.Builder builder = new AlertDialog.Builder(GroupDetailActivity.this);
+            builder.setMessage(R.string.group_confirm_delete).setPositiveButton("Yes", dialogClickListener)
+                    .setNegativeButton("No", dialogClickListener).show();
+        }
+        if (id==R.id.group_action_leave) {
+            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if (which == DialogInterface.BUTTON_POSITIVE) {
+                        EventBus.getDefault().post(new UserLeaveGroup(groupID));
+                        finish();
+                        overridePendingTransition(R.anim.activity_close_enter, R.anim.activity_close_exit);
+                    }
+                }
+            };
+            AlertDialog.Builder builder = new AlertDialog.Builder(GroupDetailActivity.this);
+            if((group != null) && group.isPrivate())
+                builder.setMessage(R.string.group_private_confirm_leave).setPositiveButton("Yes", dialogClickListener)
+                        .setNegativeButton("No", dialogClickListener).show();
+            else
+                builder.setMessage(R.string.group_confirm_leave).setPositiveButton("Yes", dialogClickListener)
+                        .setNegativeButton("No", dialogClickListener).show();
+        }
+        if (id==android.R.id.home) {
+            finish();
+            overridePendingTransition(R.anim.activity_close_enter, R.anim.activity_close_exit);
+        }
+        return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        overridePendingTransition(R.anim.activity_close_enter, R.anim.activity_close_exit);
+    }
+
+    public void invite() {
+        String buffer = group.getGroupBase64ID();
+        int size = 200;
+        Hashtable<EncodeHintType, ErrorCorrectionLevel> hintMap = new Hashtable<EncodeHintType, ErrorCorrectionLevel>();
+        hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
+        QRCodeWriter qrCodeWriter = new QRCodeWriter();
+        try {
+            BitMatrix bitMatrix = qrCodeWriter.encode(buffer, BarcodeFormat.QR_CODE, size, size, hintMap);
+            Bitmap image = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+
+            if(image != null) {
+                for (int i = 0; i < size; i++) {
+                    for (int j = 0; j < size; j++) {
+                        image.setPixel(i, j, bitMatrix.get(i, j) ? Color.BLACK : Color.WHITE);
+                    }
+                }
+                Intent intent = new Intent(this, DisplayQRCode.class);
+                intent.putExtra("EXTRA_GROUP_NAME", groupName);
+                intent.putExtra("EXTRA_BUFFER", buffer);
+                intent.putExtra("EXTRA_QRCODE", image);
+                startActivity(intent);
+                overridePendingTransition(R.anim.activity_open_enter, R.anim.activity_open_exit);
+            }
+        }catch(WriterException ignore) {
+        }
+        //}
+    }
+
+}
