@@ -21,7 +21,7 @@ import org.disrupted.ibits.network.events.NetworkEvent;
  *  - The LinkLayerAdapter to update its internal metric that is used by getBestInterface
  *  - The FragmentStatusList to provide a visual feedback to the user
  *
- * @author Lucien Loiseau
+ * @author
  */
 public class PushStatusReceived extends NetworkEvent{
 

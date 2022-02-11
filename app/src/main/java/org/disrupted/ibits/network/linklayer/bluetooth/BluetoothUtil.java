@@ -30,7 +30,7 @@ import org.disrupted.ibits.util.Log;
 import org.disrupted.ibits.app.RumbleApplication;
 
 /**
- * @author Lucien Loiseau
+ * @author
  */
 public class BluetoothUtil {
 

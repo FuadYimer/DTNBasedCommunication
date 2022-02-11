@@ -59,6 +59,7 @@ import de.greenrobot.event.EventBus;
  */
 public class CacheManager {
 
+
     private static final String TAG = "CacheManager";
 
     private static final int MAX_IMAGE_SIZE_ON_DISK = 500000;
@@ -79,6 +80,7 @@ public class CacheManager {
     }
 
     public void start() {
+
         if(!started) {
             Log.d(TAG, "[+] Starting Cache Manager");
             started = true;
@@ -384,13 +386,24 @@ public class CacheManager {
             EventBus.getDefault().post(new StatusDeletedEvent(event.status.getUuid(), event.status.getdbId()));
         }
     }
+
+    // save file and message assynchronously
     public void onEventAsync(UserComposeStatus event) {
         try {
+
             if(event.status == null)
                 return;
             if(!event.tempfile.equals("")) {
                 String cleanedUuid = FileUtil.cleanBase64(event.status.getUuid());
-                String filename = "JPEG_" + cleanedUuid + ".jpg";
+                String filename;
+                // me _ check file extension to save to local storage
+                if (event.tempfile.endsWith("zip")){
+                    filename = "ZIP_" + cleanedUuid + ".zip";
+                }
+                else{
+                    filename = "JPEG_" + cleanedUuid + ".jpg";
+                }
+                android.util.Log.d("CheckDebug"  , "Here at Catch Manager: " + filename);
                 if (saveImageOnDisk(event.tempfile, filename))
                     event.status.setFileName(filename);
             }
@@ -492,10 +505,16 @@ public class CacheManager {
         File toDelete = null;
         File savedImage = null;
         try {
-            toDelete = new File(FileUtil.getWritableAlbumStorageDir(), from);
-            savedImage   = new File(FileUtil.getWritableAlbumStorageDir(), to);
-            if(toDelete.exists() && toDelete.isFile() && (toDelete.length() > MAX_IMAGE_SIZE_ON_DISK)) {
+            if(from.endsWith(".zip")){
+                toDelete = new File(FileUtil.getWritableZIPStorageDir(), from);
+                savedImage   = new File(FileUtil.getWritableZIPStorageDir(), to);
+            }else {
+                toDelete = new File(FileUtil.getWritableAlbumStorageDir(), from);
+                savedImage   = new File(FileUtil.getWritableAlbumStorageDir(), to);
+            }
 
+
+            if(toDelete.exists() && toDelete.isFile() && (toDelete.length() > MAX_IMAGE_SIZE_ON_DISK)) {
                 // first we extrat the width and height of the image
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inJustDecodeBounds = true;
@@ -536,7 +555,13 @@ public class CacheManager {
                 scaled.recycle();
             } else {
                 // we rename the file
-                File fromFile = new File(FileUtil.getWritableAlbumStorageDir(), from);
+                File fromFile;
+                if(from.endsWith(".zip")){
+                    fromFile= new File(FileUtil.getWritableZIPStorageDir(), from);
+                }else {
+                    fromFile= new File(FileUtil.getWritableAlbumStorageDir(), from);
+                }
+
                 if(!fromFile.renameTo(savedImage))
                     throw new IOException("cannot rename the file");
             }

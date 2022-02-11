@@ -68,16 +68,16 @@ public class StatusRecyclerAdapter extends RecyclerView.Adapter<StatusRecyclerAd
         TextView filePath;
         public StatusHolder(View itemView) {
             super(itemView);
-            avatarView    = (ImageView)itemView.findViewById(R.id.status_item_avatar);
-            authorView    = (TextView) itemView.findViewById(R.id.status_item_author);
-            textView      = (TextView) itemView.findViewById(R.id.status_item_body);
-            tocView       = (TextView) itemView.findViewById(R.id.status_item_created);
-            toaView       = (TextView) itemView.findViewById(R.id.status_item_received);
-            groupNameView = (TextView) itemView.findViewById(R.id.status_item_group_name);
-            attachedView  = (ImageView)itemView.findViewById(R.id.status_item_attached_image);
-            moreView      = (ImageView)itemView.findViewById(R.id.status_item_more_options);
-            box           = (LinearLayout)itemView.findViewById(R.id.status_item_box);
-            filePath      = (TextView) itemView.findViewById(R.id.file_path);
+            avatarView    = itemView.findViewById(R.id.status_item_avatar);
+            authorView    = itemView.findViewById(R.id.status_item_author);
+            textView      = itemView.findViewById(R.id.status_item_body);
+            tocView       = itemView.findViewById(R.id.status_item_created);
+            toaView       = itemView.findViewById(R.id.status_item_received);
+            groupNameView = itemView.findViewById(R.id.status_item_group_name);
+            attachedView  = itemView.findViewById(R.id.status_item_attached_image);
+            moreView      = itemView.findViewById(R.id.status_item_more_options);
+            box           = itemView.findViewById(R.id.status_item_box);
+            filePath      = itemView.findViewById(R.id.file_path);
 
         }
 

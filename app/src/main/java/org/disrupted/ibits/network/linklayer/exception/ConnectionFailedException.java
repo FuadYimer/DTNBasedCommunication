@@ -20,7 +20,7 @@
 package org.disrupted.ibits.network.linklayer.exception;
 
 /**
- * @author Lucien Loiseau
+ * @author
  */
 public class ConnectionFailedException extends LinkLayerConnectionException{
 

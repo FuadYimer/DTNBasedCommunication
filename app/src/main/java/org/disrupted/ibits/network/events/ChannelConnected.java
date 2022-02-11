@@ -23,7 +23,7 @@ import org.disrupted.ibits.network.linklayer.LinkLayerNeighbour;
 import org.disrupted.ibits.network.protocols.ProtocolChannel;
 
 /**
- * @author Lucien Loiseau
+ * @author
  *
  * This event is sent by a ProtocolChannel whenever a LinkLayerConnection has successfully
  * opened and that thus, a channel is open to reach a certain neighbour

@@ -1,23 +1,8 @@
-/*
- * Copyright (C) 2014 Lucien Loiseau
- * This file is part of Rumble.
- * Rumble is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * Rumble is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with Rumble.  If not, see <http://www.gnu.org/licenses/>.
- */
 
 package org.disrupted.ibits.network.protocols.rumble.packetformat;
 
 import android.util.Base64;
+import android.util.Log;
 
 import org.disrupted.ibits.database.objects.PushStatus;
 import org.disrupted.ibits.network.linklayer.exception.InputOutputStreamException;
@@ -56,7 +41,7 @@ import java.util.Locale;
  * |                                           |
  * +-------------------------------------------+
  *
- * @author Lucien Loiseau
+ * @author
  */
 public class BlockFile extends Block {
 
@@ -76,6 +61,7 @@ public class BlockFile extends Block {
 
     /* Mime Types (so far we only authorize images) */
     public final static int MIME_TYPE_IMAGE = 0x01;
+    public final static int MIME_TYPE_DOCUMENT = 0x02;
 
     /* Block Attributes */
     public  String filename;
@@ -103,6 +89,7 @@ public class BlockFile extends Block {
     @Override
     public long readBlock(InputStream in) throws MalformedBlockPayload, IOException, InputOutputStreamException {
         sanityCheck();
+        Log.d("CheckDebug", "readBlock");
 
         /* read the block pseudo header */
         long readleft = header.getBlockLength();
@@ -124,24 +111,43 @@ public class BlockFile extends Block {
 
         int mime = byteBuffer.get();
         readleft -= FIELD_MIME_TYPE_SIZE;
+        Log.d("CheckDebug", "mime: " + mime);
 
         // for now we only authorize image
-        if ((mime == MIME_TYPE_IMAGE)) {
+        if ((mime == MIME_TYPE_IMAGE) || (mime == MIME_TYPE_DOCUMENT)) {
+            android.util.Log.d("CheckDebug" , "BlockFile:  MIME_TYPE_IMAGE");
             File directory;
+            File attachedFile;
             try {
-                directory = FileUtil.getWritableAlbumStorageDir();
+                if ((mime == MIME_TYPE_IMAGE)){
+                    directory = FileUtil.getWritableAlbumStorageDir();
+
+                    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date());
+                    String imageFileName = "FuadJPEG_" + timeStamp + "_";
+                    String suffix = ".jpg";
+                    attachedFile = File.createTempFile(
+                            imageFileName,  /* prefix */
+                            suffix,         /* suffix */
+                            directory       /* directory */
+                    );
+
+                }else{
+                    directory = FileUtil.getWritableZIPStorageDir();
+
+                    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date());
+                    String imageFileName = "FuadZIP_" + timeStamp + "_";
+                    String suffix = ".zip";
+                    attachedFile = File.createTempFile(
+                            imageFileName,  /* prefix */
+                            suffix,         /* suffix */
+                            directory       /* directory */
+                    );
+                }
+
                 if(directory == null)
                     throw new IOException();
 
-                android.util.Log.d("CheckDebug" , "BlockFile:  MIME_TYPE_IMAGE");
-                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date());
-                String imageFileName = "JPEG_" + timeStamp + "_";
-                String suffix = ".jpg";
-                File attachedFile = File.createTempFile(
-                        imageFileName,  /* prefix */
-                        suffix,         /* suffix */
-                        directory       /* directory */
-                );
+
 
                 FileOutputStream fos = null;
                 try {
@@ -161,6 +167,7 @@ public class BlockFile extends Block {
                 }
 
                 filename = attachedFile.getName();
+                android.util.Log.d("CheckDebug" , "FILE received ("+attachedFile.length()+" bytes): "+filename);
                 BlockDebug.d(TAG,"FILE received ("+attachedFile.length()+" bytes): "+filename);
 
                 return header.getBlockLength();
@@ -187,10 +194,21 @@ public class BlockFile extends Block {
 
     @Override
     public long writeBlock(OutputStream out, EncryptedOutputStream eos) throws IOException, InputOutputStreamException {
+
+       Log.d("CheckDebug","writeBlock: ");
         if(filename == null)
             throw new IOException("filename is null");
 
-        File attachedFile = new File(FileUtil.getReadableAlbumStorageDir(), filename);
+        Log.d("CheckDebug", "filename: " +  filename);
+
+        File attachedFile;
+        if (filename.endsWith(".zip")){
+            attachedFile = new File(FileUtil.getReadableZipStorageDir(), filename);
+        }else{
+            attachedFile = new File(FileUtil.getReadableAlbumStorageDir(), filename);
+        }
+
+
         if(!attachedFile.exists() || !attachedFile.isFile())
             throw new IOException(filename+" is not a file or does not exists");
 
@@ -198,7 +216,16 @@ public class BlockFile extends Block {
         ByteBuffer pseudoHeaderBuffer = ByteBuffer.allocate(MIN_PAYLOAD_SIZE);
         byte[] status_id    = Base64.decode(status_id_base64, Base64.NO_WRAP);
         pseudoHeaderBuffer.put(status_id, 0, FIELD_STATUS_ID_SIZE);
-        pseudoHeaderBuffer.put((byte) MIME_TYPE_IMAGE);
+        // For Now3x
+        //pseudoHeaderBuffer.put((byte) MIME_TYPE_IMAGE);
+
+        // Fix later
+        if (filename.endsWith(".zip")){
+            pseudoHeaderBuffer.put((byte) MIME_TYPE_DOCUMENT);
+        }else{
+            pseudoHeaderBuffer.put((byte) MIME_TYPE_IMAGE);
+        }
+
 
         /* send the header and the pseudo-header */
         long payloadSize = attachedFile.length();

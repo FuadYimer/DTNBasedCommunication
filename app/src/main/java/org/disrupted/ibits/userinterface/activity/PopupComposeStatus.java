@@ -229,6 +229,7 @@ public class PopupComposeStatus extends Activity {
             pickIntent.setType("*/*");
             Intent chooserIntent = Intent.createChooser(getIntent, "Select File");
             chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{pickIntent});
+
             if (getIntent.resolveActivity(activity.getPackageManager()) != null) {
                 startActivityForResult(chooserIntent, REQUEST_ATTACH_FILE);
             }
@@ -316,7 +317,7 @@ public class PopupComposeStatus extends Activity {
                     // copy the file into ibits directory
                     String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date());
                     File chosenFile = File.createTempFile(
-                            "PNG" + timeStamp + "_",  /* prefix */
+                            "JPEG" + timeStamp + "_",  /* prefix */
                             ".jpg",         /* suffix */
                             FileUtil.getWritableAlbumStorageDir()      /* directory */
                     );
@@ -332,7 +333,6 @@ public class PopupComposeStatus extends Activity {
                     out.close();
                     pictureChosen = null;
                     pictureTaken = chosenFile.getName();
-                    android.util.Log.d("CheckDebug" , "pictureChosen: " + pictureTaken);
                 }
 
                 // convert the choosen file in to zip file ----> Based on DHIS template
@@ -342,7 +342,8 @@ public class PopupComposeStatus extends Activity {
                     File chosenFile = File.createTempFile(
                             "ZIP" + timeStamp + "_",  /* prefix */
                             ".zip",         /* suffix */
-                            FileUtil.getWritableAlbumStorageDir()      /* directory */
+                            // for zip file and document storage
+                            FileUtil.getWritableZIPStorageDir()      /* directory */
                     );
 
                     InputStream in = PopupComposeStatus.this.getContentResolver().openInputStream(fileChosen);

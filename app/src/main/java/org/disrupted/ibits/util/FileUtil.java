@@ -12,6 +12,8 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.util.Log;
+
 import androidx.core.content.ContextCompat;
 import androidx.loader.content.CursorLoader;
 
@@ -81,12 +83,46 @@ public class FileUtil {
         return file;
     }
 
+    // We create to store zip file and other document in different location
+    public static File getWritableZIPStorageDir() throws IOException {
+        if(!isExternalStorageWritable())
+            throw  new IOException("Storage is not writable");
+
+        File file = new File(
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),
+                RUMBLE_IMAGE_ALBUM_NAME);
+
+        if(!file.exists() && !file.mkdirs())
+            throw  new IOException("could not create directory "+file.getAbsolutePath());
+
+        if(file.getFreeSpace() < PushStatus.STATUS_ATTACHED_FILE_MAX_SIZE)
+            throw  new IOException("not enough space available ("+file.getFreeSpace()+"/"+PushStatus.STATUS_ATTACHED_FILE_MAX_SIZE+")");
+
+        return file;
+    }
+
     public static File getReadableAlbumStorageDir() throws IOException {
         if(!isExternalStorageReadable())
             throw  new IOException("Storage is not readable");
 
         File file = new File(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
+                RUMBLE_IMAGE_ALBUM_NAME);
+
+        if(!file.exists() && !file.mkdirs())
+            throw  new IOException("could not create directory "+file.getAbsolutePath());
+
+        return file;
+    }
+
+
+    // Zip and other file storage album
+    public static File getReadableZipStorageDir() throws IOException {
+        if(!isExternalStorageReadable())
+            throw  new IOException("Storage is not readable");
+
+        File file = new File(
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),
                 RUMBLE_IMAGE_ALBUM_NAME);
 
         if(!file.exists() && !file.mkdirs())

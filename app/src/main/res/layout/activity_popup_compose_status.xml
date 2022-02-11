@@ -143,11 +143,13 @@
                     android:layout_height="wrap_content"
                     android:text="Target Group:  "
                     android:textSize="18dp"
+                    android:textColor="@color/white"
                     android:padding="5dp"/>
                 <Spinner
                     android:id="@+id/group_list_spinner"
                     android:layout_gravity="center_vertical"
                     android:minWidth="100dp"
+                    android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -157,6 +159,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="File Path"
+                android:textColor="@color/white"
                 android:textSize="18dp"
                 android:layout_below="@+id/popup_button_send"
                 android:padding="5dp"/>

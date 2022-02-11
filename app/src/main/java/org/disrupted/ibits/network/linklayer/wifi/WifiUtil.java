@@ -41,14 +41,14 @@ import java.util.Enumeration;
 import de.greenrobot.event.EventBus;
 
 /**
- * @author Lucien Loiseau
+ * @author
  */
 public class WifiUtil {
 
     public static String TAG = "WifiUtil";
 
     public static WifiManager getWifiManager() {
-        return (WifiManager) RumbleApplication.getContext().getSystemService(Context.WIFI_SERVICE);
+        return (WifiManager) RumbleApplication.getContext().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
     }
 
     public static boolean isEnabled() {

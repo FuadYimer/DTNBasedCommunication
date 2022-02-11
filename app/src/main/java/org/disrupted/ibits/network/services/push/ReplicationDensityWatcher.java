@@ -17,7 +17,7 @@ import de.greenrobot.event.EventBus;
  * following:
  *              RDu(WS) = Cu(WS) / Nu(WS)
  *
- * @author Lucien Loiseau
+ * @author
  */
 public class ReplicationDensityWatcher {
 

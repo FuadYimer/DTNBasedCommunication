@@ -70,7 +70,9 @@ public class LoginScreen extends Activity{
         String username = this.username.getText().toString();
 
         if(Contact.checkUsername(username)) {
-            populateDatabase(username);
+
+            /*  Overview about the app by default User */
+             populateDatabase(username);
 
             // start activity
             Intent routingActivity = new Intent(getApplicationContext(), RoutingActivity.class );
@@ -100,37 +102,37 @@ public class LoginScreen extends Activity{
         Group defaultPublicGroup = Group.getDefaultGroup();
         DatabaseFactory.getGroupDatabase(this).insertGroup(defaultPublicGroup);
 
-        // create Marlinski user
-        Contact marlinski = new Contact(RUMBLE_AUTHOR_NAME, "/Marlinski/=", false);
-        DatabaseFactory.getContactDatabase(this).insertOrUpdateContact(marlinski);
-        long contactDBID = DatabaseFactory.getContactDatabase(this).getContactDBID(marlinski.getUid());
+        // create iBits Default user
+        Contact iBITSDefault = new Contact(RUMBLE_AUTHOR_NAME, "/iBITSDefault/=", false);
+        DatabaseFactory.getContactDatabase(this).insertOrUpdateContact(iBITSDefault);
+        long contactDBID = DatabaseFactory.getContactDatabase(this).getContactDBID(iBITSDefault.getUid());
 
         long groupDBID = DatabaseFactory.getGroupDatabase(this).getGroupDBID(defaultPublicGroup.getGid());
         DatabaseFactory.getContactJoinGroupDatabase(this).insertContactGroup(contactDBID, groupDBID);
 
         // add few helping messages
         long time = System.currentTimeMillis();
-        PushStatus message4 = new PushStatus(marlinski, defaultPublicGroup, getResources().getString(R.string.swipe_down),time,marlinski.getUid());
+        PushStatus message4 = new PushStatus(iBITSDefault, defaultPublicGroup, getResources().getString(R.string.swipe_down),time,iBITSDefault.getUid());
         message4.setTimeOfExpiration(0);
         DatabaseFactory.getPushStatusDatabase(this).insertStatus(message4);
 
         time = System.currentTimeMillis();
-        PushStatus message3 = new PushStatus(marlinski, defaultPublicGroup, getResources().getString(R.string.swipe_right),time,marlinski.getUid());
+        PushStatus message3 = new PushStatus(iBITSDefault, defaultPublicGroup, getResources().getString(R.string.swipe_right),time,iBITSDefault.getUid());
         message3.setTimeOfExpiration(0);
         DatabaseFactory.getPushStatusDatabase(this).insertStatus(message3);
 
         time = System.currentTimeMillis();
-        PushStatus message2 = new PushStatus(marlinski, defaultPublicGroup, getResources().getString(R.string.swipe_left),time,marlinski.getUid());
+        PushStatus message2 = new PushStatus(iBITSDefault, defaultPublicGroup, getResources().getString(R.string.swipe_left),time,iBITSDefault.getUid());
         message2.setTimeOfExpiration(0);
         DatabaseFactory.getPushStatusDatabase(this).insertStatus(message2);
 
         time = System.currentTimeMillis();
-        PushStatus message1 = new PushStatus(marlinski, defaultPublicGroup, getResources().getString(R.string.welcome_notice),time,marlinski.getUid());
+        PushStatus message1 = new PushStatus(iBITSDefault, defaultPublicGroup, getResources().getString(R.string.welcome_notice),time,iBITSDefault.getUid());
         message1.setTimeOfExpiration(0);
         DatabaseFactory.getPushStatusDatabase(this).insertStatus(message1);
 
         time = System.currentTimeMillis();
-        ChatMessage message5 = new ChatMessage(marlinski, getResources().getString(R.string.chat_message_tuto), time, time, RumbleProtocol.protocolID);
+        ChatMessage message5 = new ChatMessage(iBITSDefault, getResources().getString(R.string.chat_message_tuto), time, time, RumbleProtocol.protocolID);
         DatabaseFactory.getChatMessageDatabase(this).insertMessage(message5);
 
         // create user

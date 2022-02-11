@@ -1,21 +1,7 @@
-/*
- * Copyright (C) 2014 Lucien Loiseau
- * This file is part of Rumble.
- * Rumble is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * Rumble is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with Rumble.  If not, see <http://www.gnu.org/licenses/>.
- */
 
 package org.disrupted.ibits.network.protocols.rumble.packetformat;
+
+import android.util.Log;
 
 import org.disrupted.ibits.database.objects.PushStatus;
 import org.disrupted.ibits.network.linklayer.bluetooth.BluetoothLinkLayerAdapter;
@@ -41,7 +27,7 @@ import java.io.OutputStream;
 import de.greenrobot.event.EventBus;
 
 /**
- * @author Lucien Loiseau
+ * @author
  */
 public class CommandProcessor {
 
@@ -56,11 +42,13 @@ public class CommandProcessor {
     }
 
     public boolean processCommand(Command command) throws InputOutputStreamException, IOException{
+
         int bytes_transmitted = 0;
         long timeToTransfer = System.nanoTime();
 
         switch (command.getCommandID()) {
             case SEND_LOCAL_INFORMATION:
+                Log.d("CheckDebug",  "Here at Command Processor: SEND_LOCAL_INFORMATION");
                 BlockContact blockContact = new BlockContact((CommandSendLocalInformation) command);
                 bytes_transmitted += blockContact.writeBlock(out, null);
                 channel.out_transmission_time += (System.currentTimeMillis() - timeToTransfer);
@@ -80,10 +68,12 @@ public class CommandProcessor {
                 );
                 break;
             case SEND_KEEP_ALIVE:
+                Log.d("CheckDebug",  "Here at Command Processor: SEND_KEEP_ALIVE");
                 BlockKeepAlive blockKA = new BlockKeepAlive((CommandSendKeepAlive) command);
                 blockKA.writeBlock(out, null);
                 break;
             case SEND_PUSH_STATUS:
+                Log.d("CheckDebug",  "Here at Command Processor: SEND_PUSH_STATUS");
                 CommandSendPushStatus commandSendPushStatus = (CommandSendPushStatus) command;
                 PushStatus status = commandSendPushStatus.getStatus();
 
@@ -91,7 +81,13 @@ public class CommandProcessor {
                 BlockPushStatus blockPushStatus = new BlockPushStatus(commandSendPushStatus);
                 BlockFile blockFile = null;
                 if(status.hasAttachedFile()) {
-                    File attachedFile = new File(FileUtil.getReadableAlbumStorageDir(), status.getFileName());
+                    File attachedFile;
+                    if(status.getFileName().endsWith(".zip")){
+                        attachedFile = new File(FileUtil.getReadableZipStorageDir(), status.getFileName());
+                    }else{
+                        attachedFile = new File(FileUtil.getReadableAlbumStorageDir(), status.getFileName());
+                    }
+
                     if(!(attachedFile.exists() && attachedFile.isFile())) {
                         BlockDebug.e(TAG, "attached file doesn't exist, abort sending push status");
                         return false;

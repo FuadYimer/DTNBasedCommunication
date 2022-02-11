@@ -138,7 +138,7 @@
     <string name="filter_subscribed">subscribed</string>
     <string name="toast_subscribed_to">Subscribed to</string>
 
-    <string name="welcome_notice">Hi there, Welcome to the Rumble network, where the infrastructure is carried by the hand of the users! Every message here will be forwarded to devices around you</string>
+    <string name="welcome_notice">Hi there, Welcome to the iBITS DTN network, where the infrastructure is carried by the hand of the users! Every message here will be forwarded to devices around you</string>
     <string name="swipe_left">&lt;&lt;&lt;--- Navigation drawer is accessible on the left pane, swipe to discover</string>
     <string name="swipe_right">Network drawer is accessible on the right pane, swipe to discover ---&gt;&gt;&gt;</string>
     <string name="swipe_down">Whenever you receive new message, you can refresh the list by swiping down</string>
@@ -147,7 +147,7 @@
     <string name="login_username">Username</string>
     <string name="login_bad_username">Bad username, pick a one-liner username (no more than 20 characters)!</string>
     <string name="warning_notice">Even though you can create private groups, all the messages are public by default so be careful with what you disclose</string>
-    <string name="default_rumble_group_desc">open and public group for delay tolerant communication with Rumble.</string>
+    <string name="default_rumble_group_desc">open and public group for delay tolerant communication with iBITS Communication.</string>
     <string name="description">Description:</string>
 
 </resources>

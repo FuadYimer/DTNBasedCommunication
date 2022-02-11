@@ -9,7 +9,7 @@ import org.disrupted.ibits.database.statistics.StatisticManager;
 import org.disrupted.ibits.database.CacheManager;
 
 /**
- * @author L
+ * @author
  */
 public class RumbleApplication extends Application{
 
