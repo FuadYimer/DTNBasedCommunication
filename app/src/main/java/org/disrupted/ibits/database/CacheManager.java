@@ -367,6 +367,8 @@ public class CacheManager {
         //todo trow an event
     }
     public void onEventAsync(UserDeleteStatus event) {
+
+        android.util.Log.d("CheckDebug",  " User Delete Message: " +  event.status.getFileName());
         if(event.status == null)
             return;
         if(DatabaseFactory.getPushStatusDatabase(RumbleApplication.getContext()).deleteStatus(event.status.getUuid())) {
@@ -375,7 +377,13 @@ public class CacheManager {
                 // we do not delete the file in that case
                 if(!event.status.getFileName().startsWith("/")) {
                     try {
-                        File attached = new File(FileUtil.getWritableAlbumStorageDir(), event.status.getFileName());
+                        File attached ;
+                        if (event.status.getFileName().endsWith(".zip")){
+                            attached = new File(FileUtil.getWritableZIPStorageDir(), event.status.getFileName());
+                        }else {
+                            attached = new File(FileUtil.getWritableAlbumStorageDir(), event.status.getFileName());
+                        }
+
                         if (attached.exists() && attached.isFile()) {
                             attached.delete();
                         }

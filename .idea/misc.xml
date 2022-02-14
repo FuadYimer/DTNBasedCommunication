@@ -69,7 +69,7 @@
         <entry key="app/src/main/res/layout/item_icontext.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_multistate_button.xml" value="0.175" />
         <entry key="app/src/main/res/layout/item_neighbour_list.xml" value="0.17447916666666666" />
-        <entry key="app/src/main/res/layout/item_status_list.xml" value="0.49411764705882355" />
+        <entry key="app/src/main/res/layout/item_status_list.xml" value="0.33" />
         <entry key="app/src/main/res/layout/slidingmenu_navigation_drawer.xml" value="0.1" />
         <entry key="app/src/main/res/layout/slidingmenu_network_drawer.xml" value="0.16" />
         <entry key="app/src/main/res/layout/view_combined_histogram.xml" value="0.17447916666666666" />

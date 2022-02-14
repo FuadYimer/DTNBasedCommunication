@@ -111,16 +111,38 @@ public class DisplayStatusActivity extends AppCompatActivity {
         if (status.hasAttachedFile()) {
             attachedView.setVisibility(View.VISIBLE);
             try {
-                final File attachedFile = new File(FileUtil.getReadableAlbumStorageDir(), status.getFileName());
+                //final File attachedFile = new File(FileUtil.getReadableAlbumStorageDir(), status.getFileName());
+                final File attachedFile;
+                if (status.getFileName().endsWith(".zip")){
+                    attachedFile = new File(FileUtil.getReadableZipStorageDir(), status.getFileName());
+                }else{
+                    attachedFile = new File(FileUtil.getReadableAlbumStorageDir(), status.getFileName());
+                }
+
 
                 if (!attachedFile.isFile() || !attachedFile.exists())
                     throw new IOException("file does not exists");
 
-                Picasso.get()
-                        .load("file://"+attachedFile.getAbsolutePath())
-                        .resize(96, 96)
-                        .centerCrop()
-                        .into(attachedView);
+//                Picasso.get()
+//                        .load("file://"+attachedFile.getAbsolutePath())
+//                        .resize(96, 96)
+//                        .centerCrop()
+//                        .into(attachedView);
+//
+                if (!attachedFile.isFile() || !attachedFile.exists())
+                    throw new IOException("file does not exists");
+
+                if (status.getFileName().endsWith(".zip")){
+                    attachedView.setBackgroundResource(R.drawable.ic_attach_file);
+                }else{
+                    Picasso.get()
+                            .load("file://"+attachedFile.getAbsolutePath())
+                            .resize(96, 96)
+                            .centerCrop()
+                            .into(attachedView);
+                }
+
+
 
                 final String filename =  status.getFileName();
 
@@ -131,7 +153,7 @@ public class DisplayStatusActivity extends AppCompatActivity {
                         Log.d(TAG, "trying to open: " + filename);
 			Intent intent = new Intent();
 			intent.setAction(Intent.ACTION_VIEW);
-			intent.setDataAndType(Uri.parse("file://"+attachedFile.getAbsolutePath()), "image/*");
+			intent.setDataAndType(Uri.parse("content://"+attachedFile.getAbsolutePath()), "image/*");
 			startActivity(intent);
 
                     }

@@ -161,19 +161,29 @@ public class StatusRecyclerAdapter extends RecyclerView.Adapter<StatusRecyclerAd
                 if (status.hasAttachedFile()) {
                     attachedView.setVisibility(View.VISIBLE);
                     try {
-                        final File attachedFile = new File(FileUtil.getReadableAlbumStorageDir(), status.getFileName());
+                        final File attachedFile;
+                        if (status.getFileName().endsWith(".zip")){
+                            attachedFile = new File(FileUtil.getReadableZipStorageDir(), status.getFileName());
+                        }else{
+                            attachedFile = new File(FileUtil.getReadableAlbumStorageDir(), status.getFileName());
+                        }
 
                         if (!attachedFile.isFile() || !attachedFile.exists())
                             throw new IOException("file does not exists");
 
-                        Picasso.get()
-                                .load("file://"+attachedFile.getAbsolutePath())
-                                .resize(96, 96)
-                                .centerCrop()
-                                .into(attachedView);
+                        if (status.getFileName().endsWith(".zip")){
+                            attachedView.setBackgroundResource(R.drawable.ic_attach_file);
+                        }else{
+                            Picasso.get()
+                                    .load("file://"+attachedFile.getAbsolutePath())
+                                    .resize(96, 96)
+                                    .centerCrop()
+                                    .into(attachedView);
+                        }
+
 
                       //  attachedView.setBackgroundResource(R.drawable.ic_attach_file);
-                        filePath.setText("File Name:  " + status.getFileName());
+                        //filePath.setText("File Name:  " + status.getFileName());
                         final String filename =  status.getFileName();
 
 			            /* we open the attached image through gallery */
