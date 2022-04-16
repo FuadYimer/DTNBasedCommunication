@@ -38,7 +38,7 @@ import de.greenrobot.event.NoSubscriberEvent;
  *  - it starts/stops the protocol stack (Rumble, Firechat, etc.)
  *  - it starts/stops the services (PushService, ChatService)
  *
- * @author Lucien Loiseau
+ * @author
  */
 public class NetworkCoordinator extends Service {
 

@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.concurrent.PriorityBlockingQueue;
 
 /**
- * @author Lucien Loiseau
+ * @author
  */
 public class WorkerPool {
 

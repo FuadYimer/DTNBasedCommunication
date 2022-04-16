@@ -28,7 +28,7 @@ package org.disrupted.ibits.network;
  * he is the glue between one (or multiple) link-layer neighbour (Bluetooth, IPv4, IPv6) and
  * a protocol (like firechat or ibits).
  *
- * @author Lucien Loiseau
+ * @author
  */
 public interface Worker {
 
