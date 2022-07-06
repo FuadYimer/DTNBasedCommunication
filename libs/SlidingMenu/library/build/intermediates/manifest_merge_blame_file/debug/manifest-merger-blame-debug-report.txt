@@ -6,8 +6,8 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->/media/fuad/189B0747047C2AD9/IBits File/Project/DTNBasedCommunication/libs/SlidingMenu/library/AndroidManifest.xml
+8-->/Users/fuadyimer/AndroidStudioProjects/DTNBasedCommunication/libs/SlidingMenu/library/AndroidManifest.xml
 9        android:targetSdkVersion="31" />
-9-->/media/fuad/189B0747047C2AD9/IBits File/Project/DTNBasedCommunication/libs/SlidingMenu/library/AndroidManifest.xml
+9-->/Users/fuadyimer/AndroidStudioProjects/DTNBasedCommunication/libs/SlidingMenu/library/AndroidManifest.xml
 10
 11</manifest>

@@ -170,9 +170,14 @@ public class NetworkCoordinator extends Service {
                 notificationIntent.setAction(ACTION_MAIN_ACTION);
                 notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
-                        notificationIntent, 0);
+                        notificationIntent, PendingIntent.FLAG_IMMUTABLE  );
 
-
+//                PendingIntent.getActivity(
+//                        applicationContext,
+//                        NOTIFICATION_REQUEST_CODE,
+//                        updatedIntent,
+//                        PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT // setting the mutability flag
+//                )
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     //startMyOwnForeground();

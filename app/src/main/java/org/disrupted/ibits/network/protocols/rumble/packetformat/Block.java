@@ -28,7 +28,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * @author Lucien Loiseau
+ * @author
  */
 public abstract class Block {
 
